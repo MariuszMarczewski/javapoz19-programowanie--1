@@ -1,4 +1,6 @@
-package pl.sdaacademy.javapoz19programowanie;
+package pl.sdaacademy.javapoz19programowanie.Books;
+
+import pl.sdaacademy.javapoz19programowanie.Nation;
 
 import java.util.Objects;
 

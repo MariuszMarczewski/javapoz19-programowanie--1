@@ -1,4 +1,4 @@
-package pl.sdaacademy.javapoz19programowanie;
+package pl.sdaacademy.javapoz19programowanie.Books;
 
 public class Book {
     private String title;

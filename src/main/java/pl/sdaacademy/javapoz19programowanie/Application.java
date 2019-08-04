@@ -1,5 +1,7 @@
 package pl.sdaacademy.javapoz19programowanie;
 
+import pl.sdaacademy.javapoz19programowanie.Books.Author;
+
 import java.util.*;
 
 public class Application {
