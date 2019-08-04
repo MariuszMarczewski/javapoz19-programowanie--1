@@ -2,7 +2,7 @@ package pl.sdaacademy.javapoz19programowanie;
 
 import pl.sdaacademy.javapoz19programowanie.Books.Author;
 import pl.sdaacademy.javapoz19programowanie.Books.Book;
-import pl.sdaacademy.javapoz19programowanie.Nation;
+import pl.sdaacademy.javapoz19programowanie.Books.Nation;
 
 import java.util.Arrays;
 import java.util.List;

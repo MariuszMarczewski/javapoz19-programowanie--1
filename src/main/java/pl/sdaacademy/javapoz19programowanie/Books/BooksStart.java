@@ -45,8 +45,8 @@ public class BooksStart {
             int decision = views.authorsMenu((authorsRepository.findAll()));
 
             switch(decision) {
-                case 1:
-//                    TODO
+                case 1: // findByNation
+                Nation nation = views.getNation();
                 default:
                     flag = false;
 

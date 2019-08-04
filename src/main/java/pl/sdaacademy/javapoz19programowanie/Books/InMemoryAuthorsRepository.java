@@ -1,9 +1,6 @@
 package pl.sdaacademy.javapoz19programowanie.Books;
 
-import pl.sdaacademy.javapoz19programowanie.Nation;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class InMemoryAuthorsRepository implements AuthorsRepository {
@@ -13,6 +10,11 @@ public class InMemoryAuthorsRepository implements AuthorsRepository {
     public InMemoryAuthorsRepository() {
         this.authors = new ArrayList<>();
         init();
+    }
+
+    @Override
+    public List<Author> findByNation(Nation nation) {
+        return null;
     }
 
     @Override
