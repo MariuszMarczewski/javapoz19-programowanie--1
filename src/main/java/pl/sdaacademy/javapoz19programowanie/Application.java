@@ -36,6 +36,9 @@ public class Application {
 
         System.out.println(groupByNation(authors));
 
+        ApplicationBook book = new ApplicationBook();
+
+
     }
 
     private static void showByNation(List<Author> authors, Nation nation) {
