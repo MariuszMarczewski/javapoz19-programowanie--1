@@ -25,18 +25,16 @@ public class Application {
 
 //        List<Author> authors = Arrays.asList(author1, author2, author3);
 
+
         showByNation(authors, Nation.POLISH);
 
         System.out.println(" ");
-
-        showByNationAndYear(authors, Nation.ENGLISH, 1900);
+        showByNationAndYear(authors, Nation.POLISH, 1700);
 
         System.out.println(" ");
-
         showModernAuthors(authors);
 
         System.out.println(" ");
-
         System.out.println(groupByNation(authors));
 
         ApplicationBook book = new ApplicationBook();
@@ -58,20 +56,20 @@ public class Application {
 
         for (Author author : authors){
             if(author.getBirthYear() > 1900){
-                System.out.println(authors);
+                System.out.println(author);
             }
         }
     }
 
     private static void showByNationAndYear(List<Author> authors, Nation nation, int birthYear) {
         for (Author author : authors) {
-            if (author.getNation().equals(nation)) {
-                if (author.getBirthYear() > birthYear) {
-                    System.out.println(authors);
+            if (author.getNation().equals(nation) && author.getBirthYear() > birthYear) {
+
+                    System.out.println(author);
                 }
             }
         }
-    }
+
 
     private static Map<Nation, List<Author>> groupByNation (List<Author> authors){
 

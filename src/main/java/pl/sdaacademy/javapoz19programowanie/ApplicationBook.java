@@ -66,7 +66,7 @@ public class ApplicationBook {
 
     public static void findBooksByAuthor(List<Book> books, Author author){
         books.stream()
-                . filter(book -> book.getAuthor().equals(author))
+                .filter(book -> book.getAuthor().equals(author))
                 .forEach(book -> System.out.println(author));
     }
 }
