@@ -1,5 +1,6 @@
 package pl.sdaacademy.javapoz19programowanie.Books;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class BooksStart {
@@ -12,13 +13,13 @@ public class BooksStart {
         this.authorsRepository = new InMemoryAuthorsRepository();
     }
 
-    public void start(){
+    public void start() {
 
         boolean flag = true;
-        do{
+        do {
             int decision = views.startMenu();
 
-            switch(decision) {
+            switch (decision) {
                 case 1:
                     authorsView();
                     break;
@@ -41,12 +42,16 @@ public class BooksStart {
 
         boolean flag = true;
 
-        do{
-            int decision = views.authorsMenu((authorsRepository.findAll()));
+        List<Author> authors = authorsRepository.findAll();
 
-            switch(decision) {
+        do {
+            int decision = views.authorsMenu(authors);
+
+            switch (decision) {
                 case 1: // findByNation
-                Nation nation = views.getNation();
+                    Nation nation = views.getNation();
+                    authors = authorsRepository.findByNation(nation);
+                    break;
                 default:
                     flag = false;
 

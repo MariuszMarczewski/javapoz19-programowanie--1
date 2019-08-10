@@ -12,12 +12,12 @@ public class ApplicationBook {
     public static void main(String[] args) {
 
         List<Author> authors = Arrays.asList(
-                new Author("Stephen", "King", 1947, Nation.ENGLISH),
-                new Author("Henryk", "Sienkiewicz", 1846, Nation.POLISH),
-                new Author("Adam", "Mickiewicz", 1798, Nation.POLISH),
-                new Author("Juliusz", "Słowacki", 1849, Nation.POLISH),
-                new Author("Joanne Murray", "Rowling", 1965, Nation.POLISH),
-                new Author("William", "Shakespeare", 1564, Nation.POLISH)
+                new Author("Stephen", "King", 1947, Nation.ENG),
+                new Author("Henryk", "Sienkiewicz", 1846, Nation.PL),
+                new Author("Adam", "Mickiewicz", 1798, Nation.PL),
+                new Author("Juliusz", "Słowacki", 1849, Nation.PL),
+                new Author("Joanne Murray", "Rowling", 1965, Nation.PL),
+                new Author("William", "Shakespeare", 1564, Nation.PL)
         );
 
         List<Book> books = Arrays.asList(
