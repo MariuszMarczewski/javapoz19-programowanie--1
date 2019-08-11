@@ -1,4 +1,4 @@
-package pl.sdaacademy.javapoz19programowanie.Books;
+package pl.sdaacademy.javapoz19programowanie1.Books;
 
 import java.util.List;
 import java.util.Scanner;
@@ -52,9 +52,12 @@ public class BooksStart {
                     Nation nation = views.getNation();
                     authors = authorsRepository.findByNation(nation);
                     break;
-                default:
+                case 2: //findAfterBirthYear
+                    int birthYear = views.getBirthYear();
+                    authors = authorsRepository.findAfterBirthYear(birthYear);
+                    break;
+                    default:
                     flag = false;
-
             }
 
         } while (flag);

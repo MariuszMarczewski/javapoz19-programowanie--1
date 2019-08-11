@@ -1,8 +1,8 @@
-package pl.sdaacademy.javapoz19programowanie;
+package pl.sdaacademy.javapoz19programowanie1;
 
-import pl.sdaacademy.javapoz19programowanie.Books.Author;
-import pl.sdaacademy.javapoz19programowanie.Books.Book;
-import pl.sdaacademy.javapoz19programowanie.Books.Nation;
+import pl.sdaacademy.javapoz19programowanie1.Books.Author;
+import pl.sdaacademy.javapoz19programowanie1.Books.Book;
+import pl.sdaacademy.javapoz19programowanie1.Books.Nation;
 
 import java.util.Arrays;
 import java.util.List;

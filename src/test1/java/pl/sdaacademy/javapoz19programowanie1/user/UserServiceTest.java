@@ -1,4 +1,4 @@
-package pl.sdacademy.javapoz19programowanie1.user;
+package pl.sdaacademy.javapoz19programowanie1.user;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -12,7 +12,7 @@ import java.util.List;
 public class UserServiceTest {
 
     @Test
-    public void findByGenderShouldReturnFilteredList(){
+    public void findByGenderShouldReturnFilteredList() {
         UserService userService = new UserService();
 
         List<User> list = userService.findByGender(Gender.female);
@@ -24,21 +24,22 @@ public class UserServiceTest {
                 .allMatch(gender -> gender.equals(Gender.female)));
 
     }
-@Test
-    public void mapToNamesShouldReturnListWithNames(){
+
+    @Test
+    public void mapToNamesShouldReturnListWithNames() {
         UserService userService = new UserService();
 
         List<String> names = userService.mapToNames();
 
         Assert.assertEquals(Arrays.asList("Bird Ramsey"
-                ,"Lillian Burgess"
-                ,"Kristie Cole"
-                ,"Leonor Cross"
-                ,"Marsh Mccall"), names);
+                , "Lillian Burgess"
+                , "Kristie Cole"
+                , "Leonor Cross"
+                , "Marsh Mccall"), names);
     }
 
     @Test
-    public void sortByAgeShouldReturnSortedByAgeListOfUsers(){
+    public void sortByAgeShouldReturnSortedByAgeListOfUsers() {
 
         UserService userService = new UserService();
 
@@ -48,7 +49,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void sortByBalanceShoudReturnSortedByAgeListOfUsers(){
+    public void sortByBalanceShoudReturnSortedByAgeListOfUsers() {
         UserService userService = new UserService();
 
         List<User> users = userService.sortByBalance();
@@ -58,7 +59,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void avgBalanceShouldReturnAvgValue(){
+    public void avgBalanceShouldReturnAvgValue() {
         UserService userService = new UserService();
 
         double avgBalance = userService.avgBalance();
@@ -69,14 +70,11 @@ public class UserServiceTest {
     }
 
     @Test
-    public void findWithHighestBalanceShouldReturnUserWithHighestBalance(){
+    public void findWithHighestBalanceShouldReturnUserWithHighestBalance() {
         UserService userService = new UserService();
 
         User withHighestBalance = userService.findWithHighestBalance();
 
-//Assert.assertEquals(Long.valueOf(3,946.45));
-//        Assert.assertEquals(Long.valueO, withHighestBalance.getBalance());
-//       Assert.assertEquals(Long.valueOf(394645));
-
+        Assert.assertEquals(Long.valueOf(394645), withHighestBalance.getBalance());
     }
 }

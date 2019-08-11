@@ -1,4 +1,4 @@
-package pl.sdaacademy.javapoz19programowanie.Books;
+package pl.sdaacademy.javapoz19programowanie1.Books;
 
 import java.util.List;
 import java.util.Scanner;
@@ -44,5 +44,11 @@ public class BooksViews {
         int menu = scanner.nextInt();
         scanner.nextLine();
         return menu;
+    }
+
+    public int getBirthYear() {
+        int birthYear = scanner.nextInt();
+        scanner.nextLine();
+        return birthYear;
     }
 }
