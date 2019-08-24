@@ -1,4 +1,4 @@
-package pl.sdaacademy.javapoz19programowanie1.Books;
+package pl.sdacademy.javapoz19programowanie1.Books;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +11,11 @@ public class InMemoryAuthorsRepository implements AuthorsRepository {
     public InMemoryAuthorsRepository() {
         this.authors = new ArrayList<>();
         init();
+    }
+
+    @Override
+    public List<Author> findAll() {
+        return new ArrayList<>(authors);
     }
 
     @Override
@@ -27,15 +32,8 @@ public class InMemoryAuthorsRepository implements AuthorsRepository {
                 .collect(Collectors.toList());
     }
 
-    @Override
-    public List<Author> findAll() {
-        return new ArrayList<>(authors);
-    }
-
     private void init() {
-
-
-        authors.add(new Author("Stephen", "King", 1947, Nation.ENG));
+        authors.add(new Author("Stephen", "King", 1947, Nation.USA));
         authors.add(new Author("Henryk", "Sienkiewicz", 1846, Nation.PL));
         authors.add(new Author("Adam", "Mickiewicz", 1798, Nation.PL));
         authors.add(new Author("Juliusz", "Słowacki", 1849, Nation.PL));

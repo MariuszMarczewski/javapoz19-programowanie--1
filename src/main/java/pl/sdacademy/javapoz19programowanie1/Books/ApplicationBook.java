@@ -1,23 +1,23 @@
-package pl.sdaacademy.javapoz19programowanie1;
+package pl.sdacademy.javapoz19programowanie1.Books;
 
-import pl.sdaacademy.javapoz19programowanie1.Books.Author;
-import pl.sdaacademy.javapoz19programowanie1.Books.Book;
-import pl.sdaacademy.javapoz19programowanie1.Books.Nation;
+import pl.sdacademy.javapoz19programowanie1.Books.Author;
+import pl.sdacademy.javapoz19programowanie1.Books.Book;
+import pl.sdacademy.javapoz19programowanie1.Books.Nation;
+
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ApplicationBook {
-
     public static void main(String[] args) {
-
         List<Author> authors = Arrays.asList(
-                new Author("Stephen", "King", 1947, Nation.ENG),
+                new Author("Stephen", "King", 1947, Nation.USA),
                 new Author("Henryk", "Sienkiewicz", 1846, Nation.PL),
                 new Author("Adam", "Mickiewicz", 1798, Nation.PL),
                 new Author("Juliusz", "Słowacki", 1849, Nation.PL),
-                new Author("Joanne Murray", "Rowling", 1965, Nation.PL),
-                new Author("William", "Shakespeare", 1564, Nation.PL)
+                new Author("Joanne Murray", "Rowling", 1965, Nation.ENG),
+                new Author("William", "Shakespeare", 1564, Nation.ENG)
         );
 
         List<Book> books = Arrays.asList(
@@ -32,41 +32,43 @@ public class ApplicationBook {
                 new Book("Romeo i Julia", 1595, 34, authors.get(5))
         );
 
-
-
-
+        System.out.println("srednia liczba stron: ");
         System.out.println(books.stream()
                 .mapToInt(book -> book.getPages())
                 .sum() / (double) books.size());
 
         books.stream()
+//                .forEach(System.out::println);
                 .filter(book -> book.getReleaseYear() < 2000)
                 .filter(book -> book.getPages() > 300)
                 .map(book -> book.getTitle())
-                .forEach(title -> System.out.println(title));
-
-
-
-//        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-//
-//        integers.stream()
-//                .filter(n -> n % 2 == 0)
-//                .filter(n -> n > 5)
-//                .filter(n -> n < 10)
-//                .map(n -> n * 2)
-//                .map(n -> n % 3 == 0? "podzielny przez 3" : "niepodzielny przez 3")
-////                .forEach(n -> System.out.println(n))
-////                .forEach(System.out::println)
-//                .collect(Collectors.toList());
-//        System.out.println(collect);
+                .forEach(bookTitle -> System.out.println(bookTitle));
 
         System.out.println("Henryk Sienkiewicz");
         findBooksByAuthor(books, authors.get(1));
+
+        System.out.println("Rowling");
+        findBooksByAuthor(books, authors.get(4));
     }
 
-    public static void findBooksByAuthor(List<Book> books, Author author){
+    public static void findBooksByAuthor(List<Book> books, Author author) {
         books.stream()
                 .filter(book -> book.getAuthor().equals(author))
-                .forEach(book -> System.out.println(author));
+                .forEach(book -> System.out.println(book));
+    }
+
+    public static void integersExamples() {
+        List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+        integers.stream()
+                .filter(number -> number % 2 == 0)
+                .filter(evenNumber -> {
+                    return evenNumber > 5;
+                })
+                .map(n -> n * 2)
+                .map(n -> n % 3 == 0 ? "podzielny przez 3" : "nie podzielny przez 3")
+//                .forEach(n -> System.out.println(n));
+//                .forEach(System.out::println)
+                .collect(Collectors.toList());
+        System.out.println(integers);
     }
 }

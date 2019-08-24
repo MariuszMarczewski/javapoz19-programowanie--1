@@ -1,4 +1,4 @@
-package pl.sdaacademy.javapoz19programowanie1.pet;
+package pl.sdacademy.javapoz19programowanie1.pet;
 
 
 import java.util.Objects;

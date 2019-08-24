@@ -1,7 +1,8 @@
-package pl.sdaacademy.javapoz19programowanie1.pet;
+package pl.sdacademy.javapoz19programowanie1.pet;
 
 
 import java.util.List;
+import java.util.Map;
 
 public class PetService {
 
@@ -21,5 +22,13 @@ public class PetService {
 
     public List<Pet> findByLocation(String location) {
         return petRepository.findByLocation(location);
+    }
+
+    public List<Pet> sortByAge() {
+        return petRepository.sortByAge();
+    }
+
+    public Map<String, List<Pet>> groupByBreed() {
+        return petRepository.groupByBreed();
     }
 }

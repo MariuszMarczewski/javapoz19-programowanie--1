@@ -12,8 +12,8 @@ public class User {
         this.gender = gender;
         this.balance = Long.valueOf(
                 balance.replace("$", "")
-                .replace(".", "")
-                .replace(",", "")
+                        .replace(".", "")
+                        .replace(",", "")
         );
         this.age = age;
     }

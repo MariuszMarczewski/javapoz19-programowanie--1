@@ -1,18 +1,14 @@
-package pl.sdaacademy.javapoz19programowanie1.Books;
+package pl.sdacademy.javapoz19programowanie1.Books;
 
 import java.util.Objects;
 
 public class Author {
-
     private String firstName;
     private String lastName;
     private int birthYear;
     private Nation nation;
 
-
-
     public Author() {
-
     }
 
     public Author(String firstName, String lastName, int birthYear, Nation nation) {
@@ -23,11 +19,29 @@ public class Author {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return birthYear == author.birthYear &&
+                Objects.equals(firstName, author.firstName) &&
+                Objects.equals(lastName, author.lastName) &&
+                nation == author.nation;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, birthYear, nation);
+    }
+
+    @Override
     public String toString() {
-        return  firstName + " "
-             + lastName + " " +
-                 birthYear +
-                " " + nation;
+        return "Author{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthYear=" + birthYear +
+                ", nation=" + nation +
+                '}';
     }
 
     public String getFirstName() {
@@ -62,19 +76,7 @@ public class Author {
         this.nation = nation;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Author author = (Author) o;
-        return birthYear == author.birthYear &&
-                Objects.equals(firstName, author.firstName) &&
-                Objects.equals(lastName, author.lastName) &&
-                nation == author.nation;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firstName, lastName, birthYear, nation);
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 }
