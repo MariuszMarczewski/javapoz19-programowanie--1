@@ -2,6 +2,7 @@ package pl.sdacademy.javapoz19programowanie1.Lists;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pl.sdacademy.javapoz19programowanie1.javapoz19programowanie1.MyArrayList;
 
 public class MyArrayListTest {
 
