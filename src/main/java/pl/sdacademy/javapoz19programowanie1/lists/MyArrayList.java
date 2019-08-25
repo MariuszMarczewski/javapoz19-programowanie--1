@@ -1,4 +1,4 @@
-package pl.sdacademy.javapoz19programowanie1.javapoz19programowanie1;
+package pl.sdacademy.javapoz19programowanie1.lists;
 
 public class MyArrayList {
 
