@@ -1,9 +1,6 @@
 package pl.sdacademy.javapoz19programowanie1.pet;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class InMemoryPetRepository implements PetRepository {
@@ -23,7 +20,7 @@ public class InMemoryPetRepository implements PetRepository {
                 new Pet("Gina", 3, "Scottish Terrier", "Camas, Pennsylvania"),
                 new Pet("Collins", 4, "French Bulldog", "Lisco, Alabama"),
                 new Pet("Melissa", 2, "Boxer", "Camas, Pennsylvania"),
-                new     Pet("Jeanine", 5, "French Bulldog", "Lisco, Alabama"),
+                new Pet("Jeanine", 5, "French Bulldog", "Lisco, Alabama"),
                 new Pet("Elvia", 3, "French Bulldog", "Innsbrook, Illinois"),
                 new Pet("Latisha", 6, "Golden Retriever", "Camas, Pennsylvania"),
                 new Pet("Coleman", 3, "Golden Retriever", "Jacksonwald, Palau"),
@@ -64,8 +61,11 @@ public class InMemoryPetRepository implements PetRepository {
     }
 
     @Override
-    public List<Pet> sortByAge() {
-        return null;
+    public List<Pet> sortByAge()
+    {
+        return pets.stream()
+                .sorted(Comparator.comparing(pet -> pet.getAge()))
+                .collect(Collectors.toList());
     }
 }
 

@@ -16,16 +16,6 @@ public class Pet {
         this.location = location;
     }
 
-    @Override
-    public String toString() {
-        return "Pet{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", breed='" + breed + '\'' +
-                ", location='" + location + '\'' +
-                '}';
-    }
-
     public String getName() {
         return name;
     }
